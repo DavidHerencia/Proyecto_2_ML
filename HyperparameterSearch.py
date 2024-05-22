@@ -19,7 +19,7 @@ from sklearn.preprocessing import label_binarize
 import itertools
 
 
-# Carga de modelos
+
 class Experimentacion_modelo:
     ## Atributes
     def __init__(self, model, hiper_parms, x_train, y_train, x_test=None, k_fold=4):
@@ -226,16 +226,16 @@ class Experimentacion_modelo:
         fig, ax = plt.subplots(figsize=(10, 8))
 
         # Barras
-        # sns.barplot(x="Combinaciones de Hiperparámetros", y="Score", hue="Metric", data=df, ax=ax, width=0.3,legend=False)
+        sns.barplot(x="Combinaciones de Hiperparámetros", y="Score", hue="Metric", data=df, ax=ax, width=0.3,legend=True)
         # Dispersion
         # Gráfico de dispersión
-        sns.scatterplot(x="Combinaciones de Hiperparámetros", y="Score", hue="Metric", data=df, ax=ax, s=60, legend=False)
-        # Lines
-        sns.lineplot(x="Combinaciones de Hiperparámetros", y="Score", hue="Metric", data=df, ax=ax, linewidth=2)
+        # sns.scatterplot(x="Combinaciones de Hiperparámetros", y="Score", hue="Metric", data=df, ax=ax, s=60, legend=False)
+        # # Lines
+        # sns.lineplot(x="Combinaciones de Hiperparámetros", y="Score", hue="Metric", data=df, ax=ax, linewidth=2)
 
         df_numeric = df.select_dtypes(include=['number'])
 
-        # Aplicar min() solo a las columnas numéricas 
+        # Aplicar min() solo a las columnas numéricas
         y_limit_inf = df_numeric.min().min()
         # y_limit_inf = min(df.min())
 
